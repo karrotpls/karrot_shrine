@@ -1,0 +1,9 @@
+/* Tailwind placeholder */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional glow effect override */
+.hover-glow:hover {
+  filter: drop-shadow(0 0 10px #ff6600);
+}
