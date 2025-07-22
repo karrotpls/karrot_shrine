@@ -1,42 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karrot Shine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
-  <link href="/styles/tailwind.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Madimi One', sans-serif;
-    }
-  </style>
-</head>
+<!-- Updated index.html snippet -->
 <body class="relative text-white font-sans bg-black overflow-hidden">
 
   <!-- 🔥 FULLSCREEN EMBER BACKGROUND -->
   <div class="absolute inset-0 z-0">
-    <img src="./assets/ember-particles.gif" class="w-full h-full object-cover opacity-40 blur-sm mix-blend-screen" alt="embers" />
+    <img src="./img/karrot-hex.jpeg" class="w-full h-full object-cover opacity-40 blur-sm mix-blend-screen" alt="embers" />
     <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-gray-950 opacity-60"></div>
   </div>
 
   <!-- 🧱 MAIN CONTENT LAYER -->
   <div class="relative z-10 flex flex-col min-h-screen">
-    <!-- 🔽 DROPDOWN NAV -->
-    <header class="w-full py-6 px-4 flex justify-between items-center">
-      <h1 class="text-5xl text-orange-400 drop-shadow-md">Karrot Shine</h1>
+    <header class="w-full py-6 px-4 flex justify-center sm:justify-between items-center">
+      <h1 class="text-5xl font-salty text-orange-400 drop-shadow-md text-center sm:text-left">Karrot Shine</h1>
       <div class="relative">
-        <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black shadow-md transition">Explore</button>
+        <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black shadow-md transition">Explore the PulseChain</button>
         <ul id="dropdownMenu" class="hidden absolute right-0 mt-2 w-56 bg-black bg-opacity-90 border border-orange-500 rounded-lg shadow-lg text-left">
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">🔺 PulseX</a></li>
-          <!-- add other links here -->
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">🟣 PulseChain</a></li>
+          <!-- more links... -->
         </ul>
       </div>
     </header>
 
-    <!-- 🌿 MAIN UI / STAKING AREA -->
     <main class="flex-1 flex flex-col lg:flex-row justify-center items-center gap-10 px-6 pt-10">
-      <img src="./assets/karrot-hex.jpeg" class="w-80 h-80 object-contain drop-shadow-2xl" alt="Karrot Hexagon" />
+      <img src="./img/karrot-hex.jpeg" class="w-80 h-80 object-contain drop-shadow-2xl" alt="Karrot Hexagon" />
       <div class="text-center lg:text-left space-y-4">
         <button class="bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg shadow-md">Stake Karrot</button>
         <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-6 rounded-lg shadow-md">Stake NFT</button>
@@ -51,6 +36,4 @@
       menu.classList.toggle('hidden');
     });
   </script>
-
 </body>
-</html>
