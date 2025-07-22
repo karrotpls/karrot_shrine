@@ -22,3 +22,21 @@
 .dropdown-btn, .dropdown-menu a {
   font-family: 'Salty', cursive;
 }
+
+/* 🔥 Ember Animation Layer */
+.ember-animation {
+  background: url('../assets/ember-particles.gif') repeat;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  animation: emberFloat 80s linear infinite;
+  background-size: cover;
+}
+
+@keyframes emberFloat {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 1000px;
+  }
+}
