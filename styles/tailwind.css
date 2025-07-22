@@ -9,6 +9,9 @@
   background: url('../assets/hex-pattern.png') repeat;
 }
 .ember-animation {
+  <div class="ember-animation absolute inset-0 z-10 pointer-events-none">
+  <img src="assets/ember-particles.gif" alt="Ember Particles Animation" class="w-full h-full object-cover" />
+</div>
   background: url('../assets/ember-particles.gif') repeat;
   mix-blend-mode: screen;
   animation: emberFade 10s infinite;
