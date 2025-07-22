@@ -1,57 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karrot Shine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind CSS -->
+  <link href="./styles/tailwind.css" rel="stylesheet" />
+
+  <!-- Salty Font (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
+
   <style>
     body {
-      font-family: 'Pacifico', cursive;
+      font-family: 'Silkscreen', cursive, sans-serif;
+      background-color: #0f0f10; /* dark hex black */
+      color: white;
+      overflow-x: hidden;
+    }
+    .ember-background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.3;
+      filter: blur(8px);
+      background: url('./assets/ember-particles.gif') no-repeat center center/cover;
+    }
+    /* Gradient overlay for better contrast */
+    .gradient-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, #111111 0%, #000000 100%);
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    /* Dropdown styles */
+    #dropdownMenu {
+      min-width: 200px;
+      background-color: rgba(0,0,0,0.85);
+      border: 1px solid #f97316; /* orange */
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.5);
+      position: absolute;
+      right: 0;
+      margin-top: 0.5rem;
+      display: none;
+      z-index: 100;
+    }
+    #dropdownMenu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    #dropdownMenu a:hover {
+      background-color: #f97316;
+      color: black;
     }
   </style>
 </head>
-<body class="relative bg-black text-white overflow-hidden">
+<body class="relative">
 
-  <!-- 🔥 Ember Background -->
-  <div class="absolute inset-0 z-0">
-    <img src="./assets/ember-particles.gif" class="w-full h-full object-cover opacity-30 blur-sm" alt="embers" />
-    <div class="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black opacity-80"></div>
-  </div>
+  <!-- Ember Background + Gradient Overlay -->
+  <div class="ember-background"></div>
+  <div class="gradient-overlay"></div>
 
-  <!-- 🌱 Content -->
+  <!-- Main Content -->
   <div class="relative z-10 min-h-screen flex flex-col">
 
-    <!-- Header & Dropdown -->
-    <header class="flex justify-between items-center px-6 py-4">
-      <h1 class="text-4xl text-orange-400 drop-shadow">Karrot Shine</h1>
+    <!-- Header -->
+    <header class="flex justify-between items-center px-6 py-6 max-w-7xl mx-auto">
+      <h1 class="text-5xl text-orange-500 drop-shadow-lg font-salty select-none">Karrot Shine</h1>
       <div class="relative">
-        <button id="dropdownButton" class="px-4 py-2 border border-orange-500 rounded-lg hover:bg-orange-500 hover:text-black">Explore</button>
-        <ul id="dropdownMenu" class="hidden absolute right-0 mt-2 w-56 bg-black border border-orange-500 rounded-lg">
-          <li><a href="https://pulsechain.com" class="block px-4 py-2 hover:bg-orange-500">PulseChain</a></li>
-          <!-- Add more links as needed -->
-        </ul>
+        <button id="dropdownButton" class="px-4 py-2 border border-orange-500 rounded-lg text-white hover:bg-orange-500 hover:text-black transition-shadow shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400">
+          Explore the PulseChain ▼
+        </button>
+        <nav id="dropdownMenu" aria-label="PulseChain Links" role="menu">
+          <a href="https://pulsechain.com" role="menuitem" target="_blank" rel="noopener">🟣 PulseChain</a>
+          <a href="https://pulsex.com" role="menuitem" target="_blank" rel="noopener">🔺 PulseX</a>
+          <a href="https://pulsemarket.app" role="menuitem" target="_blank" rel="noopener">🛒 PulseMarket</a>
+          <a href="https://pulsecoinlist.com" role="menuitem" target="_blank" rel="noopener">📊 PulseCoinList</a>
+          <a href="https://dex.9mm.pro" role="menuitem" target="_blank" rel="noopener">🔫 9MM DEX</a>
+          <a href="https://libertyswap.finance" role="menuitem" target="_blank" rel="noopener">🗽 LibertySwap</a>
+          <a href="https://zkp2p.xyz" role="menuitem" target="_blank" rel="noopener">🧅 ZK P2P</a>
+          <a href="https://hex.com" role="menuitem" target="_blank" rel="noopener">💎 HEX</a>
+          <a href="https://pulsetube.com" role="menuitem" target="_blank" rel="noopener">📺 PulseTube</a>
+          <a href="https://tradingview.com" role="menuitem" target="_blank" rel="noopener">📈 TradingView</a>
+        </nav>
       </div>
     </header>
 
-    <!-- Main Area -->
-    <main class="flex flex-col lg:flex-row items-center justify-center gap-8 p-10">
-      <img src="./img/karrot-hex.jpeg" alt="Karrot Hex" class="w-64 h-64 object-contain drop-shadow-2xl" />
-      <div class="space-y-4">
-        <button class="bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg shadow">Stake Karrot</button>
-        <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-6 rounded-lg shadow">Stake NFT</button>
-      </div>
-    </main>
+    <!-- Main UI -->
+    <main class="flex-1 flex flex-col lg:flex-row items-center justify-center gap-12 px-8 max-w-7xl mx-auto">
 
+      <!-- Karrot Hex Image -->
+      <img
+        src="./img/karrot-hex.jpeg"
+        alt="Karrot Hexagon"
+        class="w-80 h-80 object-contain drop-shadow-2xl select-none"
+      />
+
+      <!-- Staking Buttons -->
+      <div class="flex flex-col space-y-6">
+        <button class="bg-orange-500 hover:bg-orange-400 text-black font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105">
+          Stake Karrot
+        </button>
+        <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105">
+          Stake NFT
+        </button>
+      </div>
+
+    </main>
   </div>
 
   <script>
     const dropdownButton = document.getElementById('dropdownButton');
     const dropdownMenu = document.getElementById('dropdownMenu');
+
     dropdownButton.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('hidden');
+      if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = 'none';
+      } else {
+        dropdownMenu.style.display = 'block';
+      }
+    });
+
+    // Close dropdown if clicking outside
+    window.addEventListener('click', (e) => {
+      if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+      }
     });
   </script>
+
 </body>
 </html>
