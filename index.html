@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Karrot Shine</title>
-  <link href="styles/tailwind.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet"/>
+  <link href="styles/tailwind.css" rel="stylesheet"/>
   <script src="scripts/dropdown.js" defer></script>
 </head>
-<body class="bg-black text-white font-sans">
-  <header class="flex justify-between items-center p-4">
-    <h1 class="text-2xl font-bold">Karrot Shine</h1>
-    <div class="relative group">
-      <button class="bg-orange-600 px-4 py-2 rounded hover:bg-orange-700">Explore the PulseChain</button>
-      <div class="absolute right-0 mt-2 w-64 bg-gray-900 border border-gray-700 rounded hidden group-hover:block z-50">
+<body class="bg-[#0d0d0d] text-gray-300 font-sans relative overflow-hidden">
+  <div class="absolute inset-0 bg-hex-bg z-0"></div>
+  <div class="absolute inset-0 pointer-events-none ember-animation z-10"></div>
+
+  <header class="relative z-20 flex justify-between items-center p-6">
+    <h1 class="text-4xl text-white" style="font-family:'Salty', cursive;">Karrot Shine</h1>
+    <div class="relative">
+      <button class="dropdown-btn text-white bg-orange-600 px-4 py-2 rounded hover:bg-orange-700">Explore the PulseChain</button>
+      <div class="dropdown-menu hidden absolute right-0 mt-2 w-64 bg-gray-900 border border-gray-700 rounded z-30 shadow-lg">
         <ul class="p-2 space-y-1">
-          <li><a href="https://pulsechain.com" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/pulsechain.svg" class="w-5 h-5" /> PulseChain</a></li>
-          <li><a href="https://pulsex.com" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/pulsex.svg" class="w-5 h-5" /> PulseX</a></li>
-          <li><a href="https://pulsemarket.app" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/pulsemarket.svg" class="w-5 h-5" /> PulseMarket</a></li>
-          <li><a href="https://pulsecoinlist.com" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/pulsecoinlist.svg" class="w-5 h-5" /> PulseCoinList</a></li>
-          <li><a href="https://dex.9mm.pro" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/9mmv3.svg" class="w-5 h-5" /> 9MM v3 DEX</a></li>
-          <li><a href="https://libertyswap.finance" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/libertyswap.svg" class="w-5 h-5" /> LibertySwap</a></li>
-          <li><a href="https://zkp2p.xyz/" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/zkp2p.svg" class="w-5 h-5" /> ZK P2P</a></li>
-          <li><a href="https://hex.com" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/hex.svg" class="w-5 h-5" /> HEX</a></li>
-          <li><a href="https://pulsetube.com" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/pulsetube.svg" class="w-5 h-5" /> PulseTube</a></li>
-          <li><a href="https://tradingview.com" target="_blank" class="flex items-center gap-2 hover:text-orange-500"><img src="assets/icons/tradingview.svg" class="w-5 h-5" /> TradingView</a></li>
+          <!-- Reuse your logo links here -->
         </ul>
       </div>
     </div>
   </header>
-  <main class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-    <div>
-      <h2 class="text-xl font-semibold mb-4">Welcome to Karrot Shrine</h2>
-      <p>This is your portal into the PulseChain multiverse. Use the dropdown to explore.</p>
+
+  <main class="relative z-20 flex flex-col md:flex-row items-center p-6 gap-8">
+    <div class="flex-1 space-y-6">
+      <section class="bg-[#1a1a1a] p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl text-white mb-4" style="font-family:'Salty', cursive;">Stake Karrot</h2>
+        <p>Dual-contract staking:</p>
+        <button class="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded w-full">Stake & Earn MXDAI + RH</button>
+        <button class="mt-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded w-full">Stake MXDAI only</button>
+      </section>
+      <!-- TODO: Add interactive UI elements here -->
     </div>
-    <div class="flex justify-center">
-      <img src="img/karrot-hex.jpg"  alt="Karrot Hex" class="max-w-sm w-full h-auto object-contain drop-shadow-[0_0_15px_#ff6600]" />
+
+    <div class="flex-1 flex justify-center">
+      <img src="img/karrot-hex.jpg" alt="Karrot Hexagon" class="w-full max-w-lg h-auto object-contain drop-shadow-[0_0_25px_#ff6600]"/>
     </div>
   </main>
 </body>
