@@ -1,47 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Karrot Shine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet"/>
-  <link href="styles/tailwind.css" rel="stylesheet"/>
-  <script src="scripts/dropdown.js" defer></script>
-</head>
-<body class="<!-- 🔥 EMBER ANIMATION LAYER -->
-<div class="ember-animation absolute inset-0 z-10 pointer-events-none"></div>
-  <div class="absolute inset-0 bg-hex-bg z-0"></div>
-  <div class="ember-animation absolute inset-0 z-10 pointer-events-none">
-  <img src="assets/ember-particles.gif" alt="Ember Particles Animation" class="w-full h-full object-cover" />
-</div>
-  <div class="absolute inset-0 pointer-events-none ember-animation z-10"></div>
+<body class="relative text-white font-sans bg-black overflow-hidden min-h-screen">
 
-  <header class="relative z-20 flex justify-between items-center p-6">
-    <h1 class="text-4xl text-white" style="font-family:'Salty', cursive;">Karrot Shine</h1>
-    <div class="relative">
-      <button class="dropdown-btn text-white bg-orange-600 px-4 py-2 rounded hover:bg-orange-700">Explore the PulseChain</button>
-      <div class="dropdown-menu hidden absolute right-0 mt-2 w-64 bg-gray-900 border border-gray-700 rounded z-30 shadow-lg">
-        <ul class="p-2 space-y-1">
-          <!-- Reuse your logo links here -->
-        </ul>
-      </div>
-    </div>
-  </header>
+  <!-- 🔥 FULLSCREEN EMBER BACKGROUND -->
+  <div class="absolute inset-0 z-0">
+    <img src="./assets/images/ember-particles.gif" class="w-full h-full object-cover opacity-40 blur-sm mix-blend-screen" alt="embers" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-gray-950 opacity-70"></div>
+  </div>
 
-  <main class="relative z-20 flex flex-col md:flex-row items-center p-6 gap-8">
-    <div class="flex-1 space-y-6">
-      <section class="bg-[#1a1a1a] p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl text-white mb-4" style="font-family:'Salty', cursive;">Stake Karrot</h2>
-        <p>Dual-contract staking:</p>
-        <button class="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded w-full">Stake & Earn MXDAI + RH</button>
-        <button class="mt-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded w-full">Stake MXDAI only</button>
-      </section>
-      <!-- TODO: Add interactive UI elements here -->
-    </div>
+  <!-- FIXED DROPDOWN TOP RIGHT -->
+  <div class="fixed top-6 right-6 z-30">
+    <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded-lg hover:bg-orange-500 hover:text-black shadow-md transition">Explore the PulseChain</button>
+    <ul id="dropdownMenu" class="hidden absolute right-0 mt-2 w-56 bg-black bg-opacity-90 border border-orange-500 rounded-lg shadow-lg text-left">
+      <!-- Add links here -->
+    </ul>
+  </div>
 
-    <div class="flex-1 flex justify-center">
-      <img src="img/karrot-hex.jpg" alt="Karrot Hexagon" class="w-full max-w-lg h-auto object-contain drop-shadow-[0_0_25px_#ff6600]"/>
-    </div>
-  </main>
+  <!-- FIXED STAKING BUTTONS BELOW DROPDOWN -->
+  <div class="fixed top-24 right-6 z-20 flex flex-col gap-4">
+    <button class="bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-6 rounded-lg shadow-md">Stake Karrot</button>
+    <button class="bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 px-6 rounded-lg shadow-md">Stake NFT</button>
+  </div>
+
+  <!-- MAIN CONTENT CENTER RIGHT -->
+  <div class="relative z-10 flex flex-col justify-center items-end min-h-screen px-10">
+    <img src="./assets/karrot-hex.jpeg" class="w-96 h-96 object-contain drop-shadow-2xl" alt="Karrot Hexagon" />
+  </div>
+
+  <script>
+    const btn = document.getElementById('dropdownButton');
+    const menu = document.getElementById('dropdownMenu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
-</html>
