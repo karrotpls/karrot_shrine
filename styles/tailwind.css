@@ -1,9 +1,24 @@
-/* Tailwind placeholder */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Optional glow effect override */
-.hover-glow:hover {
-  filter: drop-shadow(0 0 10px #ff6600);
+/* Customizations */
+@import url('https://fonts.googleapis.com/css2?family=Salty&display=swap');
+
+.bg-hex-bg {
+  background: url('../assets/hex-pattern.png') repeat;
+}
+.ember-animation {
+  background: url('../assets/ember-particles.gif') repeat;
+  mix-blend-mode: screen;
+  animation: emberFade 10s infinite;
+}
+
+@keyframes emberFade {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}
+
+.dropdown-btn, .dropdown-menu a {
+  font-family: 'Salty', cursive;
 }
