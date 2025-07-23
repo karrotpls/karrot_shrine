@@ -16,32 +16,61 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-gray-950 opacity-70"></div>
   </div>
 
-  <!-- Main Content -->
   <div class="relative z-10 min-h-screen flex flex-col justify-between">
 
     <!-- Header -->
-    <header class="w-full flex flex-wrap justify-between items-center px-6 py-6">
+    <header class="w-full flex flex-wrap justify-between items-center px-6 py-6 gap-4">
+      <!-- Explore Button -->
       <div class="relative">
-        <button id="dropdownButton" class="px-4 py-2 rounded text-white border border-purple-600 bg-purple-900 hover:bg-purple-600 transition">
+        <button id="dropdownButton"
+          class="px-4 py-2 rounded text-white border-2 border-transparent bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-400 hover:from-violet-500 hover:to-cyan-300 transition">
           Explore the PulseChain
         </button>
-        <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-black bg-opacity-90 border border-purple-600 rounded shadow-lg z-50">
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/pulsechain.png" class="w-5 h-5 mr-2"/>PulseChain</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/pulsex.png" class="w-5 h-5 mr-2"/>PulseX</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/pulsemarket.png" class="w-5 h-5 mr-2"/>PulseMarket</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/pulsecoinlist.png" class="w-5 h-5 mr-2"/>PulseCoinList</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/9mm.png" class="w-5 h-5 mr-2"/>9mm DEX</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/libertyswap.png" class="w-5 h-5 mr-2"/>LibertySwap</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/zkp2p.png" class="w-5 h-5 mr-2"/>ZK P2P</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/hex.png" class="w-5 h-5 mr-2"/>HEX</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/pulsetube.png" class="w-5 h-5 mr-2"/>PulseTube</li>
-          <li class="flex items-center px-4 py-2 hover:bg-purple-700"><img src="./img/tradingview.png" class="w-5 h-5 mr-2"/>TradingView</li>
+        <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-black bg-opacity-90 border border-gray-700 rounded shadow-lg z-50">
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/pulsechain.png" class="w-5 h-5 mr-2" alt="PulseChain"/>PulseChain
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/pulsex.png" class="w-5 h-5 mr-2" alt="PulseX"/>PulseX
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/pulsemarket.png" class="w-5 h-5 mr-2" alt="PulseMarket"/>PulseMarket
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/pulsecoinlist.png" class="w-5 h-5 mr-2" alt="PulseCoinList"/>PulseCoinList
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/9mm.png" class="w-5 h-5 mr-2" alt="9MM DEX"/>9MM DEX
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/libertyswap.png" class="w-5 h-5 mr-2" alt="LibertySwap"/>LibertySwap
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/zkp2p.png" class="w-5 h-5 mr-2" alt="ZK P2P"/>ZK P2P
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/hex.png" class="w-5 h-5 mr-2" alt="HEX"/>HEX
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/pulsetube.png" class="w-5 h-5 mr-2" alt="PulseTube"/>PulseTube
+          </li>
+          <li class="flex items-center px-4 py-2 hover:bg-gray-800">
+            <img src="./img/tradingview.png" class="w-5 h-5 mr-2" alt="TradingView"/>TradingView
+          </li>
         </ul>
       </div>
+
+      <!-- Title -->
       <h1 class="text-6xl text-orange-400 drop-shadow-xl flex-1 text-center">Karrot</h1>
+
+      <!-- YouTube Buttons -->
       <div class="flex space-x-4">
-        <a href="https://m.youtube.com/@PulseTv_Show" target="_blank"><img src="./img/youtube.png" class="w-8 h-8"/></a>
-        <a href="https://m.youtube.com/@yourfriendsommi" target="_blank"><img src="./img/youtube.png" class="w-8 h-8"/></a>
+        <a href="https://m.youtube.com/@PulseTv_Show" target="_blank">
+          <img src="./img/youtube.png" alt="PulseTV" class="w-8 h-8"/>
+        </a>
+        <a href="https://m.youtube.com/@yourfriendsommi" target="_blank">
+          <img src="./img/youtube.png" alt="Sommi" class="w-8 h-8"/>
+        </a>
       </div>
     </header>
 
@@ -50,7 +79,7 @@
       <img src="./img/karrot-hex.jpg" alt="Karrot Logo" class="w-[400px] max-w-full drop-shadow-2xl z-10"/>
     </main>
 
-    <!-- Smart Contract Scroll Panels -->
+    <!-- Contract Scrolls -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 pb-12">
       <div class="bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-2xl p-6 shadow-xl text-center">
         <h2 class="text-2xl text-orange-300 mb-4">Staking Contract</h2>
@@ -66,8 +95,8 @@
   </div>
 
   <script>
-    document.getElementById('dropdownButton').addEventListener('click', () => {
-      document.getElementById('dropdownMenu').classList.toggle('hidden');
+    document.getElementById("dropdownButton").addEventListener("click", () => {
+      document.getElementById("dropdownMenu").classList.toggle("hidden");
     });
   </script>
 </body>
