@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karrot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karrot Shine</title>
   <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
@@ -12,55 +12,67 @@
     }
   </style>
 </head>
-<body class="relative text-white font-sans bg-black overflow-hidden">
+<body class="relative text-white bg-black overflow-hidden">
 
-  <!-- 🔥 FULLSCREEN EMBER BACKGROUND -->
+  <!-- 🔥 EMBER BACKGROUND -->
   <div class="absolute inset-0 z-0">
-    <img src="./assets/images/ember-particles.gif" class="w-full h-full object-cover opacity-40 blur-sm mix-blend-screen" alt="embers" />
+    <img src="./assets/images/ember-particles.gif" class="w-full h-full object-cover opacity-30 blur-sm mix-blend-screen" alt="embers" />
     <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-gray-950 opacity-70"></div>
   </div>
 
-  <!-- 🧱 MAIN CONTENT WRAPPER -->
+  <!-- 🧱 CONTENT WRAPPER -->
   <div class="relative z-10 min-h-screen flex flex-col justify-between">
-    <!-- 🔽 HEADER WITH DROPDOWN AND TITLE -->
+    <!-- 🧭 HEADER -->
     <header class="w-full flex justify-between items-center px-6 py-6">
-      <!-- DROPDOWN BUTTON LEFT -->
-      <div class="relative">
-        <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded hover:bg-orange-500 hover:text-black transition">
-          Explore the PulseChain
-        </button>
-        <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-black bg-opacity-90 border border-orange-500 rounded shadow-lg text-left">
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseChain</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseX</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseMarket</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseCoinList</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">9MM DEX</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">LibertySwap</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">ZK P2P</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">HEX</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseTube</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">TradingView</a></li>
-        </ul>
+      <!-- 🌐 LEFT SIDE NAVIGATION -->
+      <div class="flex items-center space-x-4">
+        <!-- DROPDOWN -->
+        <div class="relative">
+          <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded hover:bg-orange-500 hover:text-black transition">
+            Explore the PulseChain
+          </button>
+          <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-black bg-opacity-90 border border-orange-500 rounded shadow-lg text-left z-50">
+            <li><a href="https://pulsechain.com" class="block px-4 py-2 hover:bg-orange-500">🌐 PulseChain</a></li>
+            <li><a href="https://pulsex.com" class="block px-4 py-2 hover:bg-orange-500">💱 PulseX</a></li>
+            <li><a href="https://pulsemarket.app" class="block px-4 py-2 hover:bg-orange-500">🛒 PulseMarket</a></li>
+            <li><a href="https://pulsecoinlist.com" class="block px-4 py-2 hover:bg-orange-500">📃 PulseCoinList</a></li>
+            <li><a href="https://dex.9mm.pro" class="block px-4 py-2 hover:bg-orange-500">🔫 9MM DEX</a></li>
+            <li><a href="https://libertyswap.finance" class="block px-4 py-2 hover:bg-orange-500">🗽 LibertySwap</a></li>
+            <li><a href="https://zkp2p.xyz" class="block px-4 py-2 hover:bg-orange-500">🧅 ZK P2P</a></li>
+            <li><a href="https://hex.com" class="block px-4 py-2 hover:bg-orange-500">💎 HEX</a></li>
+            <li><a href="https://pulsetube.com" class="block px-4 py-2 hover:bg-orange-500">📺 PulseTube</a></li>
+            <li><a href="https://tradingview.com" class="block px-4 py-2 hover:bg-orange-500">📊 TradingView</a></li>
+          </ul>
+        </div>
+
+        <!-- 📺 YOUTUBE BUTTONS -->
+        <a href="https://m.youtube.com/@PulseTv_Show" target="_blank" class="text-white px-3 py-2 bg-red-600 rounded hover:bg-red-500 transition">🎥 PulseTV</a>
+        <a href="https://m.youtube.com/@yourfriendsommi" target="_blank" class="text-white px-3 py-2 bg-red-600 rounded hover:bg-red-500 transition">🎤 SOMMI</a>
       </div>
 
-      <!-- TITLE IN SALTY FONT -->
-      <h1 class="text-7xl font-salty text-orange-400 text-center drop-shadow-xl">Karrot</h1>
+      <!-- 🥕 KARROT TITLE -->
+      <h1 class="text-7xl text-orange-400 font-salty text-center drop-shadow-[0_0_15px_rgba(255,125,0,0.8)]">Karrot</h1>
+
+      <!-- 🤖 KARROT AI BUTTON -->
+      <div>
+        <button class="bg-gradient-to-br from-orange-500 to-yellow-300 text-black px-4 py-2 rounded shadow hover:shadow-xl transition">
+          🧠 Talk to Karrot AI
+        </button>
+      </div>
     </header>
 
-    <!-- 🔳 MAIN IMAGE CENTERED -->
+    <!-- 🖼️ CENTER IMAGE -->
     <main class="flex-1 flex items-center justify-center px-6">
-      <img src="./img/karrot-hex.jpeg" alt="Karrot Logo" class="w-[32rem] max-w-full object-contain drop-shadow-2xl">
+      <img src="./img/karrot-hex.jpeg" alt="Karrot Logo" class="w-[36rem] max-w-full object-contain drop-shadow-[0_0_20px_rgba(255,140,0,0.8)] z-10">
     </main>
   </div>
 
-  <!-- ⚙️ DROPDOWN SCRIPT -->
+  <!-- ⬇️ DROPDOWN LOGIC -->
   <script>
-    const btn = document.getElementById('dropdownButton');
-    const menu = document.getElementById('dropdownMenu');
-    btn.addEventListener('click', () => {
+    document.getElementById('dropdownButton').addEventListener('click', () => {
+      const menu = document.getElementById('dropdownMenu');
       menu.classList.toggle('hidden');
     });
   </script>
-
 </body>
 </html>
