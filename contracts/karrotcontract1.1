@@ -1,0 +1,118 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+/// Karrot Contract v1.0: Live, Hardened & Rewarded
+
+interface IERC20 {
+    function transferFrom(address from, address to, uint256 amount) external returns (bool);
+    function transfer(address to, uint256 amount) external returns (bool);
+    function balanceOf(address user) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+}
+
+interface IERC721 {
+    function ownerOf(uint256 tokenId) external view returns (address);
+    function isApprovedForAll(address owner, address operator) external view returns (bool);
+}
+
+contract KarrotStaking {
+    IERC20 public immutable karrotToken;
+    IERC721 public immutable nftToken;
+
+    uint256 public constant BASE_REWARD_RATE = 10; // 1 token/day per 100 staked
+    uint256 public constant MULTIPLIER = 2;
+    uint256 public constant SECONDS_IN_A_DAY = 86400;
+
+    address public admin;
+
+    struct Stake {
+        uint256 amount;
+        uint256 startTime;
+        uint256 lastClaim;
+        bool hasNFT;
+    }
+
+    mapping(address => Stake) public stakes;
+    mapping(address => bool) public blacklisted;
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not admin");
+        _;
+    }
+
+    modifier notBlacklisted() {
+        require(!blacklisted[msg.sender], "Blacklisted");
+        _;
+    }
+
+    constructor(address _karrotToken, address _nftToken) {
+        karrotToken = IERC20(_karrotToken);
+        nftToken = IERC721(_nftToken);
+        admin = msg.sender;
+    }
+
+    function stake(uint256 amount, bool includeNFT) external notBlacklisted {
+        require(amount > 0, "Amount must be > 0");
+        karrotToken.transferFrom(msg.sender, address(this), amount);
+
+        Stake storage userStake = stakes[msg.sender];
+
+        if (userStake.amount > 0) {
+            _claimReward(msg.sender); // auto-claim existing rewards
+        }
+
+        if (includeNFT) {
+            require(nftToken.isApprovedForAll(msg.sender, address(this)), "NFT not approved");
+        }
+
+        userStake.amount += amount;
+        userStake.hasNFT = includeNFT || userStake.hasNFT;
+        userStake.startTime = block.timestamp;
+        userStake.lastClaim = block.timestamp;
+    }
+
+    function _claimReward(address user) internal {
+        uint256 reward = calculateReward(user);
+        if (reward > 0) {
+            karrotToken.transfer(user, reward);
+            stakes[user].lastClaim = block.timestamp;
+        }
+    }
+
+    function claimReward() external notBlacklisted {
+        _claimReward(msg.sender);
+    }
+
+    function withdraw() external notBlacklisted {
+        Stake storage userStake = stakes[msg.sender];
+        require(userStake.amount > 0, "Nothing to withdraw");
+
+        _claimReward(msg.sender);
+        uint256 total = userStake.amount;
+
+        delete stakes[msg.sender];
+        karrotToken.transfer(msg.sender, total);
+    }
+
+    function calculateReward(address user) public view returns (uint256) {
+        Stake memory s = stakes[user];
+        if (s.amount == 0) return 0;
+
+        uint256 timeStaked = block.timestamp - s.lastClaim;
+        uint256 reward = (s.amount * BASE_REWARD_RATE * timeStaked) / (SECONDS_IN_A_DAY * 100);
+        return s.hasNFT ? reward * MULTIPLIER : reward;
+    }
+
+    // 🔧 Admin tools
+    function setBlacklist(address user, bool isBlacklisted) external onlyAdmin {
+        blacklisted[user] = isBlacklisted;
+    }
+
+    function updateAdmin(address newAdmin) external onlyAdmin {
+        admin = newAdmin;
+    }
+
+    function emergencyWithdrawTokens(address to, uint256 amount) external onlyAdmin {
+        karrotToken.transfer(to, amount);
+    }
+}
