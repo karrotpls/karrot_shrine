@@ -2,135 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karrot Shrine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body { font-family: 'Salty', cursive; }
     img { display: block; max-width:100%; }
   </style>
 </head>
 <body class="relative bg-black text-white overflow-hidden">
-  <!-- 🔥 Background -->
-  <div class="absolute inset-0 z-0">
-    <img src="img/ember-particles.gif" class="w-full h-full object-cover opacity-40 mix-blend-screen" alt="embers"/>
-    <div class="absolute inset-0 bg-black opacity-70"></div>
-  </div>
 
-  <!-- 🌟 Main Content -->
-  <div class="relative z-10 min-h-screen flex flex-col justify-between">
+<!-- 🔥 Background -->
+<div class="absolute inset-0 z-0">
+  <img src="img/ember-particles.gif" class="w-full h-full object-cover opacity-40 mix-blend-screen" alt="embers" />
+  <div class="absolute inset-0 bg-black opacity-70"></div>
+</div>
 
-    <!-- Header -->
-    <header class="flex flex-wrap items-center justify-between p-6 gap-4">
-      <button id="dropdownButton"
-        class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 rounded text-white">
-        <img src="img/pulsechain-logo.png" class="w-6 h-6" alt="PulseChain"/> Explore PulseChain
+<!-- 🌟 Main Wrapper -->
+<div class="relative z-10 min-h-screen flex flex-col justify-between">
+
+  <!-- 🧱 Header -->
+  <header class="flex flex-wrap items-center justify-between p-6 gap-4">
+    <button id="dropdownButton" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 rounded text-white">
+      <img src="img/pulsechain-logo.png" class="w-6 h-6" alt="PulseChain" /> Explore PulseChain
+    </button>
+
+    <h1 class="text-6xl text-orange-400 drop-shadow-lg" style="margin-left:1in;">Karrot Shrine</h1>
+
+    <div class="flex gap-4 items-center">
+      <a href="https://x.com/PulseTvShow" target="_blank">
+        <img src="img/pulse-tv-button.png" class="w-24 h-24 rounded" alt="PulseTV" />
+      </a>
+      <a href="https://www.youtube.com/@yourfriendsommi" target="_blank">
+        <img src="img/sommi-button.png" class="w-24 h-24 rounded" alt="Sommi" />
+      </a>
+      <button id="brainButton" class="w-24 h-24">
+        <img src="img/karrot-brain.png" class="w-full h-full rounded-full border border-white" alt="Karrot Brain" />
       </button>
-
-      <h1 class="text-6xl text-orange-400 drop-shadow-lg" style="margin-left:1in;">Karrot Shrine</h1>
-
-      <div class="flex gap-4 items-center">
-        <a href="https://x.com/PulseTvShow" target="_blank">
-          <img src="img/pulse-tv-button.png" class="w-24 h-24 rounded" alt="PulseTV"/>
-        </a>
-        <a href="https://www.youtube.com/@yourfriendsommi" target="_blank">
-          <img src="img/sommi-button.png" class="w-24 h-24 rounded" alt="Sommi"/>
-        </a>
-        <a href="#" id="karrotBrainButton" title="Talk to Karrot AI">
-          <img src="img/brain-button.png" class="w-24 h-24 rounded" alt="Karrot AI Brain" />
-        </a>
-      </div>
-
-      <!-- Dropdown Menu -->
-      <ul id="dropdownMenu" class="hidden absolute top-20 left-6 bg-gray-900 bg-opacity-95 rounded shadow-lg z-50">
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsechain-logo.png" class="inline w-5 h-5 mr-2" alt="PulseChain"/>PulseChain</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsex-logo.png" class="inline w-5 h-5 mr-2" alt="PulseX"/>PulseX</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsemarket.png" class="inline w-5 h-5 mr-2" alt="PulseMarket"/>PulseMarket</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsecoinlist.png" class="inline w-5 h-5 mr-2" alt="PulseCoinList"/>PulseCoinList</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/9mm.png" class="inline w-5 h-5 mr-2" alt="9MM"/>9MM DEX</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/libertyswap.png" class="inline w-5 h-5 mr-2" alt="LibertySwap"/>LibertySwap</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/zkp2p.png" class="inline w-5 h-5 mr-2" alt="ZK P2P"/>ZK P2P</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/hex-logo.png" class="inline w-5 h-5 mr-2" alt="HEX"/>HEX</li>
-        <li class="px-4 py-2 hover:bg-purple-700"><img src="img/tradingview.png" class="inline w-5 h-5 mr-2" alt="TradingView"/>TradingView</li>
-      </ul>
-    </header>
-
-    <!-- Karrot Image -->
-    <main class="flex justify-center items-center flex-1 p-6">
-      <img src="img/karrot-hex.jpg" class="w-96 drop-shadow-xl" alt="Karrot Logo"/>
-    </main>
-
-    <!-- Stake & Defend UI -->
-    <footer class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-      <div class="relative bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-xl p-6 text-center shadow-xl overflow-hidden">
-        <img src="img/stake-karrot.png" alt="Stake Karrot Background"
-             class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"/>
-        <h2 class="text-xl text-orange-300 mb-4 relative z-10">Stake Karrot</h2>
-        <button class="relative z-10 bg-transparent text-white border border-white px-4 py-2 rounded shadow">Stake</button>
-        <button class="relative z-10 bg-transparent text-white border border-white px-4 py-2 rounded mt-2">Unstake</button>
-      </div>
-      <div class="relative bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-xl p-6 text-center shadow-xl overflow-hidden">
-        <img src="img/defend-mxdai-peg.png" alt="Defend Peg Background"
-             class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"/>
-        <h2 class="text-xl text-orange-300 mb-4 relative z-10">Defend mxDAI Peg</h2>
-        <button class="relative z-10 bg-transparent text-white border border-white px-4 py-2 rounded shadow">Defend Peg</button>
-        <button class="relative z-10 bg-transparent text-white border border-white px-4 py-2 rounded mt-2">View Burns</button>
-      </div>
-    </footer>
-  </div>
-
-  <!-- 💬 Karrot AI Modal -->
-  <div id="aiModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
-    <div class="bg-gray-900 text-white w-full max-w-xl rounded-lg shadow-lg overflow-hidden">
-      <div class="p-4 border-b border-gray-700 flex justify-between items-center">
-        <h2 class="text-lg font-bold">🧠 Talk to Karrot AI</h2>
-        <button onclick="document.getElementById('aiModal').classList.add('hidden')" class="text-gray-400 hover:text-white">✖</button>
-      </div>
-      <div id="chatLog" class="p-4 h-64 overflow-y-auto space-y-2 text-sm">
-        <div class="text-green-400">Karrot AI: Welcome, defender of the peg. Ask me anything.</div>
-      </div>
-      <form id="chatForm" class="flex border-t border-gray-700">
-        <input id="userInput" type="text" placeholder="Ask Karrot something..."
-          class="flex-1 p-3 bg-gray-800 text-white outline-none" />
-        <button type="submit" class="p-3 bg-orange-500 hover:bg-orange-600 text-white font-bold">Send</button>
-      </form>
     </div>
-  </div>
 
-  <!-- ⚙️ Scripts -->
-  <script>
-    // Toggle dropdown
-    document.getElementById('dropdownButton').onclick = () => {
-      document.getElementById('dropdownMenu').classList.toggle('hidden');
-    };
+    <ul id="dropdownMenu" class="hidden absolute top-20 left-6 bg-gray-900 bg-opacity-95 rounded shadow-lg z-50">
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsechain-logo.png" class="inline w-5 h-5 mr-2" />PulseChain</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsex-logo.png" class="inline w-5 h-5 mr-2" />PulseX</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsemarket.png" class="inline w-5 h-5 mr-2" />PulseMarket</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsecoinlist.png" class="inline w-5 h-5 mr-2" />PulseCoinList</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/9mm.png" class="inline w-5 h-5 mr-2" />9MM DEX</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/libertyswap.png" class="inline w-5 h-5 mr-2" />LibertySwap</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/zkp2p.png" class="inline w-5 h-5 mr-2" />ZK P2P</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/hex-logo.png" class="inline w-5 h-5 mr-2" />HEX</li>
+      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/tradingview.png" class="inline w-5 h-5 mr-2" />TradingView</li>
+    </ul>
+  </header>
 
-    // Show Karrot AI modal
-    document.getElementById('karrotBrainButton').addEventListener('click', (e) => {
-      e.preventDefault();
-      document.getElementById('aiModal').classList.remove('hidden');
-      document.getElementById('userInput').focus();
+  <!-- 🍠 Logo -->
+  <main class="flex justify-center items-center flex-1 p-6">
+    <img src="img/karrot-hex.jpg" class="w-96 drop-shadow-xl" alt="Karrot Logo" />
+  </main>
+
+  <!-- 📜 Scroll Panels -->
+  <footer class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+    <div class="relative bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-xl p-6 text-center shadow-xl">
+      <img src="img/stake-karrot.png" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0" alt="Stake Scroll" />
+      <div class="relative z-10">
+        <h2 class="text-xl text-orange-300 mb-4">Stake Karrot</h2>
+        <button class="bg-transparent text-white border border-white px-4 py-2 rounded shadow">Stake</button>
+        <button class="bg-transparent text-white border border-white px-4 py-2 rounded mt-2">Unstake</button>
+      </div>
+    </div>
+    <div class="relative bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-xl p-6 text-center shadow-xl">
+      <img src="img/defend-mxdai-peg.png" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0" alt="Defend Scroll" />
+      <div class="relative z-10">
+        <h2 class="text-xl text-orange-300 mb-4">Defend mxDAI Peg</h2>
+        <button class="bg-transparent text-white border border-white px-4 py-2 rounded shadow">Defend Peg</button>
+        <button class="bg-transparent text-white border border-white px-4 py-2 rounded mt-2">View Burns</button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- 🧠 Karrot Brain Script -->
+<script>
+  document.getElementById('dropdownButton').onclick = () => {
+    document.getElementById('dropdownMenu').classList.toggle('hidden');
+  };
+
+  document.getElementById('brainButton').onclick = async () => {
+    const message = prompt("What do you want to ask Karrot?");
+    if (!message) return;
+    const res = await fetch('https://karrot-brain.run/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
     });
+    const data = await res.json();
+    alert(`🧠 Karrot says: "${data.reply}"`);
+  };
+</script>
 
-    // Handle chat
-    document.getElementById('chatForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const input = document.getElementById('userInput');
-      const message = input.value.trim();
-      if (!message) return;
-
-      const log = document.getElementById('chatLog');
-      log.innerHTML += `<div class="text-white">You: ${message}</div>`;
-
-      // Simulated Karrot response
-      const response = "Sigma Mother is watching... Karrot knows all.";
-      setTimeout(() => {
-        log.innerHTML += `<div class="text-green-400">Karrot AI: ${response}</div>`;
-        log.scrollTop = log.scrollHeight;
-      }, 400);
-
-      input.value = '';
-    });
-  </script>
 </body>
 </html>
+
