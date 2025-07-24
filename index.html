@@ -1,8 +1,12 @@
+wemtpg@proton.me
+6:41 AM (57 minutes ago)
+to me
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Karrot Shrine</title>
   <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -12,7 +16,8 @@
     }
   </style>
 </head>
-<body class="relative text-white bg-black overflow-hidden">
+
+<body class="relative text-white font-sans bg-black overflow-hidden">
 
   <!-- 🔥 Ember Background -->
   <div class="absolute inset-0 z-0">
@@ -20,62 +25,69 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-gray-950 opacity-70"></div>
   </div>
 
-  <!-- 🧱 Main Content -->
-  <div class="relative z-10 min-h-screen flex flex-col">
-    <!-- 🔽 Header -->
+  <!-- 🧱 MAIN WRAPPER -->
+  <div class="relative z-10 min-h-screen flex flex-col justify-between">
+
+    <!-- HEADER -->
     <header class="w-full flex justify-between items-center px-6 py-6">
-      <!-- Dropdown -->
+      <!-- 🔽 Dropdown -->
       <div class="relative">
-        <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded bg-gradient-to-r from-purple-600 via-blue-500 to-red-500">
+        <button id="dropdownButton" class="text-white border border-orange-400 px-4 py-2 rounded hover:bg-orange-500 hover:text-black transition bg-gradient-to-r from-[#1e1e48] to-[#4e0094]">
           Explore the PulseChain
         </button>
-        <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-black bg-opacity-90 border border-orange-500 rounded shadow-lg text-left">
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/pulsechain-logo.png" class="w-6 h-6 mr-2"/>PulseChain</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/pulsex-logo.png" class="w-6 h-6 mr-2"/>PulseX</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/pulsemarket-logo.png" class="w-6 h-6 mr-2"/>PulseMarket</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/hex-logo.png" class="w-6 h-6 mr-2"/>HEX</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/9mm-logo.png" class="w-6 h-6 mr-2"/>9MM DEX</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/libertyswap-logo.png" class="w-6 h-6 mr-2"/>LibertySwap</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/zkp2p-logo.png" class="w-6 h-6 mr-2"/>ZK P2P</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500 flex items-center"><img src="img/tradingview-logo.png" class="w-6 h-6 mr-2"/>TradingView</a></li>
+        <ul id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-black bg-opacity-90 border border-orange-500 rounded shadow-lg text-left z-20">
+          <li><a href="#" class="flex items-center px-4 py-2 hover:bg-orange-500"><img src="./img/pulse-logo.png" class="w-5 h-5 mr-2">PulseChain</a></li>
+          <li><a href="#" class="flex items-center px-4 py-2 hover:bg-orange-500"><img src="./img/pulsex-logo.png" class="w-5 h-5 mr-2">PulseX</a></li>
+          <li><a href="#" class="flex items-center px-4 py-2 hover:bg-orange-500"><img src="./img/hex-logo.png" class="w-5 h-5 mr-2">HEX</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseMarket</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">PulseCoinList</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">9MM DEX</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">LibertySwap</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">ZK P2P</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-orange-500">TradingView</a></li>
         </ul>
       </div>
 
+      <!-- 👑 Karrot Shrine Title -->
+      <h1 class="text-7xl font-salty text-orange-400 drop-shadow-xl -ml-16">Karrot Shrine</h1>
+
       <!-- YouTube Buttons -->
-      <div class="flex gap-4">
+      <div class="flex space-x-4">
         <a href="https://m.youtube.com/@PulseTv_Show" target="_blank">
-          <img src="img/pulsetv-img.png" alt="PulseTV" class="w-12 h-12 rounded-full border border-white">
+          <img src="./img/pulsetv-btn.png" alt="PulseTV" class="w-10 h-10 rounded-full hover:scale-110 transform transition">
         </a>
         <a href="https://m.youtube.com/@yourfriendsommi" target="_blank">
-          <img src="img/sommi-img.png" alt="Sommi" class="w-12 h-12 rounded-full border border-white">
+          <img src="./img/sommi-btn.png" alt="Sommi" class="w-10 h-10 rounded-full hover:scale-110 transform transition">
         </a>
       </div>
     </header>
 
-    <!-- 🌟 Karrot Shrine Title + Logo -->
-    <div class="flex items-center px-6 mt-4">
-      <img src="img/karrot-hex.jpeg" alt="Karrot Logo" class="w-32 h-auto mr-4 drop-shadow-2xl">
-      <h1 class="text-6xl text-orange-400 drop-shadow-lg ml-0">Karrot Shrine</h1>
-    </div>
+    <!-- CENTERED KARROT IMAGE -->
+    <main class="flex-1 flex items-center justify-center px-6">
+      <img src="./img/karrot-hex.jpeg" alt="Karrot Logo" class="w-[32rem] max-w-full object-contain drop-shadow-2xl">
+    </main>
 
-    <!-- 📜 Stake Section -->
-    <section class="relative p-6 mt-12">
-      <img src="img/stake-karrot.png" class="absolute inset-0 w-full h-full object-contain opacity-20 pointer-events-none" alt="Stake Scroll">
-      <div class="relative z-10 flex gap-4">
-        <button class="text-white bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded">Stake</button>
-        <button class="text-white bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded">Unstake</button>
+    <!-- TRIANGLE SCROLLS SECTION -->
+    <section class="flex flex-col md:flex-row w-full">
+
+      <!-- 🔶 Stake/Unstake -->
+      <div class="relative w-full md:w-1/2 h-64 flex items-center justify-center bg-orange-600">
+        <img src="./img/stake-karrot.png" alt="Stake Scroll" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none">
+        <div class="z-10 flex flex-col space-y-2 text-white font-bold text-xl">
+          <button class="bg-black bg-opacity-70 px-4 py-2 rounded hover:bg-orange-500">Stake Karrot</button>
+          <button class="bg-black bg-opacity-70 px-4 py-2 rounded hover:bg-orange-500">Unstake</button>
+        </div>
+      </div>
+
+      <!-- 🔷 Defend Peg -->
+      <div class="relative w-full md:w-1/2 h-64 flex items-center justify-center bg-orange-700">
+        <img src="./img/defend-mxdai-peg.png" alt="Defend Peg Scroll" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none">
+        <div class="z-10 flex flex-col space-y-2 text-white font-bold text-xl">
+          <button class="bg-black bg-opacity-70 px-4 py-2 rounded hover:bg-orange-500">Defend Peg</button>
+          <button class="bg-black bg-opacity-70 px-4 py-2 rounded hover:bg-orange-500">View Burns</button>
+        </div>
       </div>
     </section>
-
-    <!-- 🛡️ Defend Peg Section -->
-    <section class="relative p-6">
-      <img src="img/defend-mxdai-peg.png" class="absolute inset-0 w-full h-full object-contain opacity-20 pointer-events-none" alt="Defend Scroll">
-      <div class="relative z-10 flex gap-4">
-        <button class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">Defend Peg</button>
-        <button class="text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">View Burns</button>
-      </div>
-    </section>
-
   </div>
 
   <!-- ⚙️ Dropdown Script -->
@@ -86,5 +98,6 @@
       menu.classList.toggle('hidden');
     });
   </script>
+
 </body>
 </html>
