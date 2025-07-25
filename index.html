@@ -11,6 +11,24 @@
     img { display: block; max-width:100%; }
   </style>
 </head>
+<script>
+  // Dropdown menu toggle
+  document.getElementById('dropdownButton').onclick = () => {
+    document.getElementById('dropdownMenu').classList.toggle('hidden');
+  };
+
+  // Karrot Brain button logic
+  const brainButton = document.getElementById('karrotBrainBtn');
+  brainButton.addEventListener('click', () => {
+    const audio = new Audio('https://cdn.pixabay.com/audio/2022/03/10/audio_c97d0a34c1.mp3'); // placeholder scream
+    audio.play();
+
+    alert('💡 SIGMA MOTHER HAS AWAKENED KARROT’S BRAIN!');
+
+    // Future AI interaction can go here
+    console.log("Karrot's Brain Activated – Ready for Sigma expansion.");
+  });
+</script>
 <body class="relative bg-black text-white overflow-hidden">
 
 <!-- 🔥 Background -->
@@ -37,6 +55,10 @@
       <a href="https://www.youtube.com/@yourfriendsommi" target="_blank">
         <img src="img/sommi-button.png" class="w-24 h-24 rounded" alt="Sommi" />
       </a>
+      <a href="#" id="karrotBrainBtn" title="Awaken the Brain">
+  <img src="img/brain.png" alt="Karrot Brain" class="w-16 h-16 rounded-full hover:scale-110 transition transform duration-300" />
+</a>
+
       <button id="brainButton" class="w-24 h-24">
         <img src="img/brain.png" alt="Karrot Brain" class="w-16 h-16" />
       </button>
