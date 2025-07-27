@@ -3,125 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karrot Shrine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Salty', cursive; }
-    img { display: block; max-width:100%; }
-  </style>
+  <title>Karrot Nexus</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<script>
-  // Dropdown menu toggle
-  document.getElementById('dropdownButton').onclick = () => {
-    document.getElementById('dropdownMenu').classList.toggle('hidden');
-  };
-
-  // Karrot Brain button logic
-  const brainButton = document.getElementById('karrotBrainBtn');
-  brainButton.addEventListener('click', () => {
-    const audio = new Audio('https://cdn.pixabay.com/audio/2022/03/10/audio_c97d0a34c1.mp3'); // placeholder scream
-    audio.play();
-
-    alert('💡 SIGMA MOTHER HAS AWAKENED KARROT’S BRAIN!');
-
-    // Future AI interaction can go here
-    console.log("Karrot's Brain Activated – Ready for Sigma expansion.");
-  });
-</script>
-<body class="relative bg-black text-white overflow-hidden">
-
-<!-- 🔥 Background -->
-<div class="absolute inset-0 z-0">
-  <img src="img/ember-particles.gif" class="w-full h-full object-cover opacity-40 mix-blend-screen" alt="embers" />
-  <div class="absolute inset-0 bg-black opacity-70"></div>
-</div>
-
-<!-- 🌟 Main Wrapper -->
-<div class="relative z-10 min-h-screen flex flex-col justify-between">
-
-  <!-- 🧱 Header -->
-  <header class="flex flex-wrap items-center justify-between p-6 gap-4">
-    <button id="dropdownButton" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400 rounded text-white">
-      <img src="img/pulsechain-logo.png" class="w-6 h-6" alt="PulseChain" /> Explore PulseChain
-    </button>
-
-    <h1 class="text-6xl text-orange-400 drop-shadow-lg" style="margin-left:1in;">Karrot Shrine</h1>
-
-    <div class="flex gap-4 items-center">
-      <a href="https://x.com/PulseTvShow" target="_blank">
-        <img src="img/pulse-tv-button.png" class="w-24 h-24 rounded" alt="PulseTV" />
-      </a>
-      <a href="https://www.youtube.com/@yourfriendsommi" target="_blank">
-        <img src="img/sommi-button.png" class="w-24 h-24 rounded" alt="Sommi" />
-      </a>
-      <a href="#" id="karrotBrainBtn" title="Awaken the Brain">
-  <img src="img/brain.png" alt="Karrot Brain" class="w-16 h-16 rounded-full hover:scale-110 transition transform duration-300" />
-</a>
-
-      <button id="brainButton" class="w-24 h-24">
-        <img src="img/brain.png" alt="Karrot Brain" class="w-16 h-16" />
-      </button>
+<body>
+  <header>
+    <div class="logo-section">
+      <img src="img/pulsetv-logo.png" alt="Pulse TV" class="logo pulse" />
+      <img src="img/karrot-brain.png" alt="Karrot Brain" class="logo brain" />
     </div>
-
-    <ul id="dropdownMenu" class="hidden absolute top-20 left-6 bg-gray-900 bg-opacity-95 rounded shadow-lg z-50">
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsechain-logo.png" class="inline w-5 h-5 mr-2" />PulseChain</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsex-logo.png" class="inline w-5 h-5 mr-2" />PulseX</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsemarket.png" class="inline w-5 h-5 mr-2" />PulseMarket</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/pulsecoinlist.png" class="inline w-5 h-5 mr-2" />PulseCoinList</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/9mm.png" class="inline w-5 h-5 mr-2" />9MM DEX</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/libertyswap.png" class="inline w-5 h-5 mr-2" />LibertySwap</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/zkp2p.png" class="inline w-5 h-5 mr-2" />ZK P2P</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/hex-logo.png" class="inline w-5 h-5 mr-2" />HEX</li>
-      <li class="px-4 py-2 hover:bg-purple-700"><img src="img/tradingview.png" class="inline w-5 h-5 mr-2" />TradingView</li>
-    </ul>
+    <nav>
+      <ul class="dropdown-menu">
+        <li><a href="https://libertyswap.finance" target="_blank">LibertySwap</a></li>
+        <li><a href="https://zkp2p.xyz" target="_blank">ZKp2p</a></li>
+        <li><a href="https://karrot.exchange" target="_blank">Karrot DEX</a></li>
+        <li><a href="oracle-dashboard.html">Oracle Dashboard</a></li>
+        <li><a href="stats.html">Stats & Shine</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- 🍠 Logo -->
-  <main class="flex justify-center items-center flex-1 p-6">
-    <img src="img/karrot-hex.jpg" class="w-96 drop-shadow-xl" alt="Karrot Logo" />
+  <main>
+    <section class="hero">
+      <h1>Karrot Grows in the Cracks</h1>
+      <img src="img/shrine.jpg" alt="The Shrine" id="shrine-image" />
+      <div class="karrot-overlay"></div>
+    </section>
+    <section class="buttons">
+      <button id="sommiBtn">Sommi</button>
+      <button id="karrotVoiceBtn">Karrot Speaks</button>
+    </section>
   </main>
 
-  <!-- 📜 Scroll Panels -->
-  <footer class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-    <div class="relative bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-xl p-6 text-center shadow-xl">
-      <img src="img/stake-karrot.png" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0" alt="Stake Scroll" />
-      <div class="relative z-10">
-        <h2 class="text-xl text-orange-300 mb-4">Stake Karrot</h2>
-        <button class="bg-transparent text-white border border-white px-4 py-2 rounded shadow">Stake</button>
-        <button class="bg-transparent text-white border border-white px-4 py-2 rounded mt-2">Unstake</button>
-      </div>
-    </div>
-    <div class="relative bg-yellow-50 bg-opacity-5 border border-yellow-600 rounded-xl p-6 text-center shadow-xl">
-      <img src="img/defend-mxdai-peg.png" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0" alt="Defend Scroll" />
-      <div class="relative z-10">
-        <h2 class="text-xl text-orange-300 mb-4">Defend mxDAI Peg</h2>
-        <button class="bg-transparent text-white border border-white px-4 py-2 rounded shadow">Defend Peg</button>
-        <button class="bg-transparent text-white border border-white px-4 py-2 rounded mt-2">View Burns</button>
-      </div>
-    </div>
+  <footer>
+    <p>&copy; 2025 Karrot Labs. All Rights Reserved.</p>
   </footer>
-</div>
 
-<!-- 🧠 Karrot Brain Script -->
-<script>
-  document.getElementById('dropdownButton').onclick = () => {
-    document.getElementById('dropdownMenu').classList.toggle('hidden');
-  };
-
-  document.getElementById('brainButton').onclick = async () => {
-    const message = prompt("What do you want to ask Karrot?");
-    if (!message) return;
-    const res = await fetch('https://karrot-brain.run/api/ask', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message })
-    });
-    const data = await res.json();
-    alert(`🧠 Karrot says: "${data.reply}"`);
-  };
-</script>
-
+  <script src="karrot-logic.js"></script>
+  <script src="dropdown.js"></script>
+  <script src="voice-pack.js"></script>
 </body>
 </html>
-
