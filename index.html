@@ -7,7 +7,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Salty&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Salty', cursive; }
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karrot Nexus</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-section">
+      <img src="img/pulsetv-logo.png" alt="Pulse TV" class="logo pulse" />
+      <img src="img/karrot-brain.png" alt="Karrot Brain" class="logo brain" />
+    </div>
+    <nav>
+      <ul class="dropdown-menu">
+        <li><a href="https://libertyswap.finance" target="_blank">LibertySwap</a></li>
+        <li><a href="https://zkp2p.xyz" target="_blank">ZKp2p</a></li>
+        <li><a href="https://karrot.exchange" target="_blank">Karrot DEX</a></li>
+        <li><a href="oracle-dashboard.html">Oracle Dashboard</a></li>
+        <li><a href="stats.html">Stats & Shine</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Karrot Grows in the Cracks</h1>
+      <img src="img/shrine.jpg" alt="The Shrine" id="shrine-image" />
+      <div class="karrot-overlay"></div>
+    </section>
+    <section class="buttons">
+      <button id="sommiBtn">Sommi</button>
+      <button id="karrotVoiceBtn">Karrot Speaks</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Karrot Labs. All Rights Reserved.</p>
+  </footer>
+
+  <script src="karrot-logic.js"></script>
+  <script src="dropdown.js"></script>
+  <script src="voice-pack.js"></script>
+</body>
+</html>body { font-family: 'Salty', cursive; }
     img { display: block; max-width:100%; }
   </style>
 </head>
