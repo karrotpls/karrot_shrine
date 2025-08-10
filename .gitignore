@@ -1,1 +1,13 @@
+# Ignore environment variables
 .env
+
+# Node modules (if applicable)
+node_modules/
+
+# Logs
+*.log
+
+# Build outputs
+dist/
+build/
+
