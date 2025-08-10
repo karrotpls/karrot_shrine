@@ -110,29 +110,28 @@
 
   <!-- 🧠 Karrot Brain Script -->
   <script>
-    document.getElementById('dropdownButton').onclick = () => {
-      document.getElementById('dropdownMenu').classList.toggle('hidden');
-    };
+  document.getElementById('dropdownButton').onclick = () => {
+    document.getElementById('dropdownMenu').classList.toggle('hidden');
+  };
 
-    document.getElementById('karrotBrainBtn').onclick = async () => {
-  const message = prompt("What do you want to ask Karrot?");
-  if (!message) return;
+  document.getElementById('karrotBrainBtn').onclick = async () => {
+    const message = prompt("What do you want to ask Karrot?");
+    if (!message) return;
 
-  const res = await fetch('https://karrot-brain.run/api/ask', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer YOUR_API_KEY=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
-    },
-    body: JSON.stringify({ message })
-  });
+    const res = await fetch('https://karrot-brain.run/api/ask', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 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'
+      },
+      body: JSON.stringify({ message })
+    });
 
-  const data = await res.json();
-  alert(`🧠 Karrot says: "${data.reply}"`);
-};
+    const data = await res.json();
+    alert(`🧠 Karrot says: "${data.reply}"`);
+  };
+</script>
 
-    };
-  </script>
 
 <!-- Modal container -->
 <div id="contractModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
