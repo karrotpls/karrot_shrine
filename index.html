@@ -115,15 +115,22 @@
     };
 
     document.getElementById('karrotBrainBtn').onclick = async () => {
-      const message = prompt("What do you want to ask Karrot?");
-      if (!message) return;
-      const res = await fetch('https://karrot-brain.run/api/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
-      });
-      const data = await res.json();
-      alert(`🧠 Karrot says: "${data.reply}"`);
+  const message = prompt("What do you want to ask Karrot?");
+  if (!message) return;
+
+  const res = await fetch('https://karrot-brain.run/api/ask', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer YOUR_API_KEY_HERE` // 👈 Replace with actual key or reference
+    },
+    body: JSON.stringify({ message })
+  });
+
+  const data = await res.json();
+  alert(`🧠 Karrot says: "${data.reply}"`);
+};
+
     };
   </script>
 
