@@ -154,11 +154,16 @@
     }
 
     document.getElementById('karrotBrainBtn').onclick = async () => {
-      const message = prompt("What do you ask of Karrot?");
-      if (!message) return;
-      const reply = getKarrotReply(message);
-      alert(reply);
-    };
+  const message = prompt("What do you ask of Karrot?");
+  if (!message) return;
+  const reply = getKarrotReply(message);
+  
+  // Inject into modal
+  document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
+  document.getElementById('modalContent').innerText = reply;
+  document.getElementById('contractModal').classList.remove('hidden');
+};
+
 
     document.getElementById('dropdownButton').onclick = () => {
       document.getElementById('dropdownMenu').classList.toggle('hidden');
