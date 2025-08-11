@@ -161,31 +161,27 @@
     "The soul shall find itself alone...",
     "I was a child and she was a child, in this kingdom by the sea...",
     "Over the mountains of the moon, down the valley of the shadow..."
-  ];
+   ];
 
   function getRandomLine() {
     return poePoems[Math.floor(Math.random() * poePoems.length)];
   }
 
   function getKarrotReply(prompt = "") {
-  const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
-  const line = getRandomLine();
-
-  if (tone === "dark") {
-    return `🖤 Karrot whispers:\n"${line}"\n...and fades into thought.`;
-  } else {
-    return `🧠 Karrot muses:\n"${line}"`;
+    const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
+    const line = getRandomLine();
+    if (tone === "dark") {
+      return `🖤 Karrot whispers:\n"${line}"\n...and fades into thought.`;
+    } else {
+      return `🧠 Karrot muses:\n"${line}"`;
+    }
   }
-}
-
-
 
   // Show input modal
   document.getElementById('karrotBrainBtn').addEventListener('click', () => {
-  document.getElementById('karrotUserInput').value = "";
-  document.getElementById('askKarrotModal').classList.remove('hidden');
-});
-
+    document.getElementById('karrotUserInput').value = "";
+    document.getElementById('askKarrotModal').classList.remove('hidden');
+  });
 
   // Submit question
   window.submitKarrotQuestion = function () {
@@ -215,6 +211,7 @@
   window.closeModal = function () {
     document.getElementById('contractModal').classList.add('hidden');
   };
+});
 </script>
 </body>
 </html>
