@@ -167,11 +167,16 @@
   }
 
   function getKarrotReply(prompt = "") {
-    const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
-    return tone === "dark"
-      ? `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`
-    : `🧠 Karrot muses:\n"${getRandomLine()}"`;
+  const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
+  const line = getRandomLine();
+
+  if (tone === "dark") {
+    return `🖤 Karrot whispers:\n"${line}"\n...and fades into thought.`;
+  } else {
+    return `🧠 Karrot muses:\n"${line}"`;
+  }
 }
+
 
   // Show input modal
   document.getElementById('karrotBrainBtn').addEventListener('click', () => {
