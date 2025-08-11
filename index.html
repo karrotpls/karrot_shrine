@@ -178,10 +178,15 @@
 
   // Show input modal
   document.getElementById('karrotBrainBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('karrotUserInput').value = "";
-    document.getElementById('askKarrotModal').classList.remove('hidden');
-  });
+  e.preventDefault();
+  const input = document.getElementById('karrotUserInput');
+  input.value = "";
+  document.getElementById('askKarrotModal').classList.remove('hidden');
+  
+  // Give it a tiny delay to ensure modal is visible before focusing
+  setTimeout(() => input.focus(), 50);
+});
+
 
   // Submit question
   window.submitKarrotQuestion = function () {
