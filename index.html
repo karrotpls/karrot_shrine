@@ -168,18 +168,16 @@
 
   function getKarrotReply(prompt = "") {
     const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
-    if (tone === "dark") {
-      return `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`;
-    } else {
-      return `🧠 Karrot muses:\n"${getRandomLine()}"`;
-    }
+    return tone === "dark"
+      ? `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`
+      : `🧠 Karrot muses:\n"${getRandomLine()}"`;
   }
 
   // Show input modal
-  document.getElementById('karrotBrainBtn').onclick = () => {
+  document.getElementById('karrotBrainBtn').addEventListener('click', () => {
     document.getElementById('karrotUserInput').value = "";
     document.getElementById('askKarrotModal').classList.remove('hidden');
-  };
+  });
 
   // Submit question
   window.submitKarrotQuestion = function () {
@@ -201,55 +199,14 @@
   };
 
   // Toggle dropdown
-  document.getElementById('dropdownButton').onclick = () => {
-    document.getElementById('dropdownMenu').classList.toggle('hidden');
-  };
-
-  // Close response modal
-  window.closeModal = function () {
-    document.getElementById('contractModal').classList.add('hidden');
-  };
-</script>
-
-  
-</script>
-
-  function getRandomLine() {
-    return poePoems[Math.floor(Math.random() * poePoems.length)];
-  }
-
-  function getKarrotReply(prompt = "") {
-    const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
-    return tone === "dark"
-      ? `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`
-      : `🧠 Karrot muses:\n"${getRandomLine()}"`;
-  }
-
-  document.getElementById('karrotBrainBtn').addEventListener('click', () => {
-    const message = prompt("What do you ask of Karrot?");
-    if (!message) return;
-
-    const reply = getKarrotReply(message);
-
-    // Show modal + background image
-    document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
-    document.getElementById('modalContent').innerText = reply;
-    document.getElementById('contractModal').classList.remove('hidden');
-  });
-
   document.getElementById('dropdownButton').addEventListener('click', () => {
     document.getElementById('dropdownMenu').classList.toggle('hidden');
   });
 
+  // Close modal
   window.closeModal = function () {
     document.getElementById('contractModal').classList.add('hidden');
   };
 </script>
-</body>
-</html>
-
-
-
-
 </body>
 </html>
