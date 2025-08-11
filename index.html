@@ -153,25 +153,30 @@
       }
     }
 
-    document.getElementById('karrotBrainBtn').onclick = async () => {
-  const message = prompt("What do you ask of Karrot?");
-  if (!message) return;
-  const reply = getKarrotReply(message);
-  
-  // Inject into modal
-  document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
-  document.getElementById('modalContent').innerText = reply;
-  document.getElementById('contractModal').classList.remove('hidden');
-};
+    <script type="module">
+  // ...existing Karrot code...
 
+  document.getElementById('karrotBrainBtn').onclick = async () => {
+    const message = prompt("What do you ask of Karrot?");
+    if (!message) return;
+    const reply = getKarrotReply(message);
 
-    document.getElementById('dropdownButton').onclick = () => {
-      document.getElementById('dropdownMenu').classList.toggle('hidden');
-    };
-  function closeModal() {
-  document.getElementById('contractModal').classList.add('hidden');
-}
+    // Inject into modal
+    document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
+    document.getElementById('modalContent').innerText = reply;
+    document.getElementById('contractModal').classList.remove('hidden');
+  };
+
+  document.getElementById('dropdownButton').onclick = () => {
+    document.getElementById('dropdownMenu').classList.toggle('hidden');
+  };
+
+  // ✅ Fix: move this function inside script
+  window.closeModal = function () {
+    document.getElementById('contractModal').classList.add('hidden');
+  };
 </script>
+
 
 </body>
 </html>
