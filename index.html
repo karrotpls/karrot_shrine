@@ -169,9 +169,9 @@
   function getKarrotReply(prompt = "") {
     const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
     return tone === "dark"
-      ? 🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.
-      : 🧠 Karrot muses:\n"${getRandomLine()}";
-  }
+      ? `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`
+    : `🧠 Karrot muses:\n"${getRandomLine()}"`;
+}
 
   // Show input modal
   document.getElementById('karrotBrainBtn').addEventListener('click', () => {
