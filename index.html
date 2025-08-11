@@ -213,6 +213,12 @@
   document.getElementById('dropdownButton').addEventListener('click', () => {
     document.getElementById('dropdownMenu').classList.toggle('hidden');
   });
+document.getElementById('karrotUserInput').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    submitKarrotQuestion(); // This already closes the input modal and opens the contract modal
+  }
+});
 </script>
 
 </body>
