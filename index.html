@@ -82,14 +82,24 @@
     </footer>
   </div>
 
-  <!-- Contract Modal -->
-  <div id="contractModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
-    <div class="bg-white text-black rounded-lg p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-      <button onclick="closeModal()" class="text-red-600 float-right font-bold">X</button>
-      <h3 id="modalTitle" class="text-xl font-semibold mb-4"></h3>
-      <pre id="modalContent" class="whitespace-pre-wrap text-sm overflow-x-auto"></pre>
+  <!-- 📜 Contract Modal / Karrot Chat Box -->
+<div id="contractModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+  <div class="relative bg-black bg-opacity-70 text-white rounded-lg p-6 max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-orange-400">
+    
+    <!-- 🖼 Background Image -->
+    <img src="img/Lilly_karrot1.jpg" alt="Karrot Background" class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 rounded-lg pointer-events-none" />
+
+    <!-- ❌ Close Button -->
+    <button onclick="closeModal()" class="text-red-500 font-bold absolute top-3 right-4 z-10 text-xl hover:scale-110 transition">✖</button>
+
+    <!-- 🧠 Modal Content -->
+    <div class="relative z-10">
+      <h3 id="modalTitle" class="text-2xl font-semibold mb-4 drop-shadow-lg">🧠 Karrot Says</h3>
+      <pre id="modalContent" class="whitespace-pre-wrap text-sm font-mono text-orange-200 bg-black bg-opacity-40 p-4 rounded-lg shadow-inner overflow-x-auto"></pre>
     </div>
   </div>
+</div>
+
 
   <!-- Karrot Brain (Frontend Only) -->
   <script type="module">
