@@ -40,8 +40,9 @@
         <a href="https://x.com/PulseTvShow" target="_blank"><img src="img/pulse-tv-button.png" class="w-24 h-24 rounded" alt="PulseTV"></a>
         <a href="https://www.youtube.com/@yourfriendsommi" target="_blank"><img src="img/sommi-button.png" class="w-24 h-24 rounded" alt="Sommi"></a>
         <a href="#" id="karrotBrainBtn" title="Awaken the Brain">
-          <img src="img/brain.png" alt="Karrot Brain" class="w-16 h-16 rounded-full hover:scale-110 transition duration-300">
-        </a>
+  <img src="img/brain.png" alt="Karrot Brain" class="w-16 h-16 rounded-full hover:scale-110 transition duration-300">
+</a>
+
       </div>
       <ul id="dropdownMenu" class="absolute top-20 left-6 bg-gray-900 bg-opacity-95 rounded shadow-lg z-50">
         <li class="px-4 py-2 hover:bg-purple-700"><a href="https://pulsechain.com" target="_blank"><img src="img/pulsechain-logo.png" class="inline w-5 h-5 mr-2">PulseChain</a></li>
@@ -180,9 +181,10 @@
 
   // Show input modal
   document.getElementById('karrotBrainBtn').addEventListener('click', () => {
-    document.getElementById('karrotUserInput').value = "";
-    document.getElementById('askKarrotModal').classList.remove('hidden');
-  });
+  document.getElementById('karrotUserInput').value = "";
+  document.getElementById('askKarrotModal').classList.remove('hidden');
+});
+
 
   // Submit question
   window.submitKarrotQuestion = function () {
