@@ -188,11 +188,9 @@
 
     const reply = getKarrotReply(userInput);
 
-    // Inject into response modal
     document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
     document.getElementById('modalContent').innerText = reply;
 
-    // Hide ask modal, show response modal
     closeAskModal();
     document.getElementById('contractModal').classList.remove('hidden');
   };
@@ -211,6 +209,9 @@
   window.closeModal = function () {
     document.getElementById('contractModal').classList.add('hidden');
   };
+</script>
+
+  
 </script>
 
   function getRandomLine() {
