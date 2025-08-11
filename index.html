@@ -112,16 +112,7 @@
   <img src="img/Lilly_karrot1.jpg" alt="Karrot Background" class="w-full h-full object-cover opacity-30" />
 </div>
 
-    <!-- ❌ Close Button -->
-    <button onclick="closeModal()" class="text-red-500 font-bold absolute top-3 right-4 z-10 text-xl hover:scale-110 transition">✖</button>
-
-    <!-- 🧠 Modal Content -->
-    <div class="relative z-10">
-      <h3 id="modalTitle" class="text-2xl font-semibold mb-4 drop-shadow-lg">🧠 Karrot Says</h3>
-      <pre id="modalContentInner" class="whitespace-pre-wrap text-sm font-mono text-orange-200 bg-black bg-opacity-40 p-4 rounded-lg shadow-inner overflow-x-auto"></pre>
-    </div>
-  </div>
-</div>
+    
 
 
   <!-- Karrot Brain (Frontend Only) -->
@@ -161,7 +152,7 @@
     "The soul shall find itself alone...",
     "I was a child and she was a child, in this kingdom by the sea...",
     "Over the mountains of the moon, down the valley of the shadow..."
-   ];
+  ];
 
   function getRandomLine() {
     return poePoems[Math.floor(Math.random() * poePoems.length)];
@@ -178,7 +169,8 @@
   }
 
   // Show input modal
-  document.getElementById('karrotBrainBtn').addEventListener('click', () => {
+  document.getElementById('karrotBrainBtn').addEventListener('click', (e) => {
+    e.preventDefault();
     document.getElementById('karrotUserInput').value = "";
     document.getElementById('askKarrotModal').classList.remove('hidden');
   });
@@ -190,8 +182,9 @@
 
     const reply = getKarrotReply(userInput);
 
-    document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
-    document.getElementById('modalContent').innerText = reply;
+    // Replace modalContent text
+    const modalContent = document.getElementById('modalContent');
+    modalContent.innerText = reply;
 
     closeAskModal();
     document.getElementById('contractModal').classList.remove('hidden');
@@ -202,20 +195,17 @@
     document.getElementById('askKarrotModal').classList.add('hidden');
   };
 
-  // Toggle dropdown
+  // Close response modal
+  window.closeModal = function () {
+    document.getElementById('contractModal').classList.add('hidden');
+    document.getElementById('modalContent').innerText = "";
+  };
+
+  // Dropdown toggle
   document.getElementById('dropdownButton').addEventListener('click', () => {
     document.getElementById('dropdownMenu').classList.toggle('hidden');
   });
-
-  // Close modal
-  window.closeModal = function () { 
-  document.getElementById('contractModal').classList.add('hidden');
-  document.getElementById('modalContentInner').innerText = "";
-  document.getElementById('modalContent').innerText = "";
-};
-
-
-
 </script>
+
 </body>
 </html>
