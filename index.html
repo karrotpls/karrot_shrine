@@ -208,12 +208,11 @@
   });
 
   // Close modal
-  window.closeModal = function () {
+  window.closeModal = function () { 
   document.getElementById('contractModal').classList.add('hidden');
+  document.getElementById('modalContentInner').innerText = "";
 };
 
-    document.getElementById('modalContentInner').classList.add('hidden');
-  };
 
 </script>
 </body>
