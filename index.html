@@ -168,6 +168,57 @@
 
   function getKarrotReply(prompt = "") {
     const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
+    if (tone === "dark") {
+      return `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`;
+    } else {
+      return `🧠 Karrot muses:\n"${getRandomLine()}"`;
+    }
+  }
+
+  // Show input modal
+  document.getElementById('karrotBrainBtn').onclick = () => {
+    document.getElementById('karrotUserInput').value = "";
+    document.getElementById('askKarrotModal').classList.remove('hidden');
+  };
+
+  // Submit question
+  window.submitKarrotQuestion = function () {
+    const userInput = document.getElementById('karrotUserInput').value.trim();
+    if (!userInput) return;
+
+    const reply = getKarrotReply(userInput);
+
+    // Inject into response modal
+    document.getElementById('modalTitle').innerText = "🧠 Karrot Responds";
+    document.getElementById('modalContent').innerText = reply;
+
+    // Hide ask modal, show response modal
+    closeAskModal();
+    document.getElementById('contractModal').classList.remove('hidden');
+  };
+
+  // Close ask modal
+  window.closeAskModal = function () {
+    document.getElementById('askKarrotModal').classList.add('hidden');
+  };
+
+  // Toggle dropdown
+  document.getElementById('dropdownButton').onclick = () => {
+    document.getElementById('dropdownMenu').classList.toggle('hidden');
+  };
+
+  // Close response modal
+  window.closeModal = function () {
+    document.getElementById('contractModal').classList.add('hidden');
+  };
+</script>
+
+  function getRandomLine() {
+    return poePoems[Math.floor(Math.random() * poePoems.length)];
+  }
+
+  function getKarrotReply(prompt = "") {
+    const tone = /poem|raven|dark/i.test(prompt) ? "dark" : "random";
     return tone === "dark"
       ? `🖤 Karrot whispers:\n"${getRandomLine()}"\n...and fades into thought.`
       : `🧠 Karrot muses:\n"${getRandomLine()}"`;
