@@ -1,5 +1,5 @@
 // aDream.js
-const aDream = `
+export default `
 In visions of the dark night
     I have dreamed of joy departed—
 But a waking dream of life and light
@@ -20,4 +20,3 @@ What though that light, thro’ storm and night,
 What could there be more purely bright
     In Truth’s day-star?
 `;
-export default aDream;
