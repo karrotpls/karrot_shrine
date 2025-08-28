@@ -65,7 +65,8 @@ async function loadAllPoems() {
         try {
           const poemModule = {};
           // Isolate the eval into the object (assumes export default string)
-          eval(`poemModule.text = ${code.trim().replace(/^export default/, '')}`);
+          fetch(`./Poe/${name}.txt`).then(res => res.text());
+
           return poemModule.text;
         } catch (err) {
           console.error(`Failed to parse ${name}.js`, err);
