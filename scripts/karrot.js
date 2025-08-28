@@ -90,24 +90,52 @@ async function loadAllPoems() {
 }
 
 
-// Utility: get random poem line
-function getRandomPoemLine() {
-  if (!loadedPoems.length) return "Karrot is still awakening...";
+// 🧠 Blended Karrot Logic
+
+// Old static lines (your short script lines)
+const fallbackLines = [
+  "Once upon a midnight dreary, while I pondered, weak and weary...",
+  "Deep into that darkness peering, long I stood there wondering, fearing...",
+  "And the silken sad uncertain rustling of each purple curtain...",
+  "Ah, distinctly I remember it was in the bleak December...",
+  "From childhood's hour I have not been as others were—I have not seen as others saw..."
+];
+
+// New: get random line from loaded poems (from Poe folder)
+function getRandomLineFromPoems() {
+  if (!loadedPoems.length) return null;
   const poem = loadedPoems[Math.floor(Math.random() * loadedPoems.length)];
   const lines = poem.split('\n').map(l => l.trim()).filter(l => l.length > 0);
   return lines[Math.floor(Math.random() * lines.length)];
 }
 
-// 🧠 Karrot AI Response
+// Function to randomly pick from fallback or loaded poems, blended
+function getRandomLineBlended() {
+  // 50% chance fallback or loaded poem line (adjust ratio here)
+  const usePoemLine = Math.random() < 0.5;
+
+  if (usePoemLine) {
+    const poemLine = getRandomLineFromPoems();
+    if (poemLine) return poemLine;
+    // fallback to static if no poems loaded yet
+  }
+
+  // fallback static line
+  return fallbackLines[Math.floor(Math.random() * fallbackLines.length)];
+}
+
+// Final Karrot reply function using dynamic + static mix
 function getKarrotReply(prompt = "") {
   const tone = /poem|raven|dark|death|night/i.test(prompt) ? "dark" : "light";
-  const line = getRandomPoemLine();
+  const line = getRandomLineBlended();
+
   if (tone === "dark") {
     return `🖤 Karrot whispers:\n"${line}"\n...and fades into thought.`;
   } else {
     return `🧠 Karrot muses:\n"${line}"`;
   }
 }
+
 
 // 🎛️ UI Hookups
 
