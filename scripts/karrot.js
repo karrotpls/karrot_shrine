@@ -60,23 +60,35 @@ let loadedPoems = [];
 async function loadAllPoems() {
   const promises = poeFilenames.map(name =>
     fetch(`./Poe/${name}.js`)
-      .then(res => res.text())
+      .then(res => {
+        if (!res.ok) throw new Error(`Failed to load ${name}.js`);
+        return res.text();
+      })
       .then(code => {
         try {
-          const poemModule = {};
-          // Isolate the eval into the object (assumes export default string)
-          fetch(`./Poe/${name}.txt`).then(res => res.text());
-
-          return poemModule.text;
+          // Extract exported string from the JS module content like: export default `poem text`;
+          const match = code.match(/export\s+default\s+(`[\s\S]*?`|'[\s\S]*?'|"[\s\S]*?")/);
+          if (match && match[1]) {
+            // Remove surrounding quotes or backticks
+            return match[1].slice(1, -1);
+          } else {
+            console.error(`Failed to parse ${name}.js — export default string not found.`);
+            return '';
+          }
         } catch (err) {
           console.error(`Failed to parse ${name}.js`, err);
           return '';
         }
       })
+      .catch(err => {
+        console.error(err);
+        return '';
+      })
   );
 
   loadedPoems = (await Promise.all(promises)).filter(Boolean);
 }
+
 
 // Utility: get random poem line
 function getRandomPoemLine() {
