@@ -164,6 +164,14 @@
       return `🧠 Karrot muses:\n"${line}"`;
     }
   }
+const voiceToggle = document.getElementById('voiceToggle');
+const voiceToggleLabel = document.getElementById('voiceToggleLabel');
+
+if (voiceToggle) {
+  voiceToggle.addEventListener('change', () => {
+    voiceToggleLabel.textContent = voiceToggle.checked ? 'Male Voice' : 'Female Voice';
+  });
+}
 
   // Show input modal
   document.getElementById('karrotBrainBtn').addEventListener('click', (e) => {
