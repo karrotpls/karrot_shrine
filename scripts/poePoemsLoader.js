@@ -1,4 +1,39 @@
-export const poeFilenames = [ /* your list of poem names */ ];
+export const poeFilenames = [
+  "aDream",
+  "aDreamWithinADream",
+  "acrosticElizabeth",
+  "alAaraaf",
+  "alone",
+  "annabelLee",
+  "bridalBallad",
+  "dreamLand",
+  "eldorado",
+  "elizabeth",
+  "enigma",
+  "eulalie",
+  "eveningStar",
+  "fairyLand",
+  "israfel",
+  "lenore",
+  "sonnetToScience",
+  "spiritsOfTheDead",
+  "tamerlane",
+  "theBells",
+  "theCityInTheSea",
+  "theColiseum",
+  "theConquerorWorm",
+  "theHauntedPalace",
+  "theSleeper",
+  "theraven",
+  "toF",
+  "toHelen",
+  "toMLS",
+  "toMyMother",
+  "toScience",
+  "toTheRiver",
+  "ulalume"
+];
+
 export let loadedPoems = [];
 
 export async function loadAllPoems() {
@@ -11,5 +46,6 @@ export async function loadAllPoems() {
       })
       .catch(() => '')
   );
+
   loadedPoems = (await Promise.all(promises)).filter(Boolean);
 }
